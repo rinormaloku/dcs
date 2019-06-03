@@ -1,0 +1,41 @@
+
+debug = false
+
+logLevel = "DEBUG"
+defaultEntryPoints = ["https","http"]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+  [entryPoints.https.tls]
+
+[file]
+  # directory = "/path/to/config/"
+  watch = true
+
+
+[acme]
+email = "rinormaloku@gmail.com"
+#caServer = "https://acme-staging.api.letsencrypt.org/directory"
+storage = "acme/certs.json"
+entryPoint = "https"
+onHostRule = true
+[acme.httpChallenge]
+entryPoint = "http"
+
+
+[frontends]
+  [frontends.supr]
+  backend = "suprb"
+    [frontends.supr.routes.test_1]
+    rule = "Host:tr.ofli.io,tr2.ofli.io,tr3.ofli.io"
+
+[backends]
+  [backends.suprb]
+    [backends.suprb.servers.server1]
+    url = "http://suprb:80"
+    weight = 10
