@@ -1,6 +1,6 @@
 IMAGE_NAME=$1
 
-cat << EOF > ./docker-compose.yml
+cat << EOF > /sample/docker-compose.yml
 version: "3"
 
 services:
