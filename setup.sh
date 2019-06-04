@@ -2,7 +2,7 @@ IMAGE_NAME=$1
 
 mkdir /sample
 touch /sample/docker-compose.yml
-cat << EOF > /sample/docker-compose.yml
+cat << EOF > /webserver/docker-compose.yml
 version: "3"
 
 services:
