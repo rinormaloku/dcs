@@ -2,7 +2,7 @@
   [frontends.tr_ofli_io]
     backend = "suprb"
   [frontends.tr_ofli_io.routes.test_1]
-    rule = "Host:tr.rinor.dev"
+    rule = "Host:tx.rinor.dev"
 
 [backends]
   [backends.suprb]
