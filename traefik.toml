@@ -13,28 +13,14 @@ defaultEntryPoints = ["https","http"]
   [entryPoints.https.tls]
 
 [file]
-  # directory = "/path/to/config/"
+  directory = "/trconf/"
   watch = true
-
 
 [acme]
 email = "rinormaloku@gmail.com"
 #caServer = "https://acme-staging.api.letsencrypt.org/directory"
-storage = "acme/certs.json"
+storage = "acme/acme.json"
 entryPoint = "https"
 onHostRule = true
 [acme.httpChallenge]
 entryPoint = "http"
-
-
-[frontends]
-  [frontends.supr]
-  backend = "suprb"
-    [frontends.supr.routes.test_1]
-    rule = "Host:tr.ofli.io"
-
-[backends]
-  [backends.suprb]
-    [backends.suprb.servers.server1]
-    url = "http://suprb:80"
-    weight = 10

@@ -1,0 +1,11 @@
+[frontends]
+  [frontends.tr_ofli_io]
+    backend = "suprb"
+  [frontends.tr_ofli_io.routes.test_1]
+    rule = "Host:tr.ofli.io"
+
+[backends]
+  [backends.suprb]
+    [backends.suprb.servers.server1]
+    url = "http://suprb:80"
+    weight = 10
