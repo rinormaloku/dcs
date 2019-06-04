@@ -17,9 +17,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    command:
-      - "80:80" 
-      - "443:443" 
     volumes:
       - ./traefik:/etc/traefik       # Traefik configuration 
       - ./volumes/trconf:/trconf     # Traefik multi host configuration
