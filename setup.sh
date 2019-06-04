@@ -1,7 +1,7 @@
 IMAGE_NAME=$1
 
-mkdir /sample
-touch /sample/docker-compose.yml
+mkdir /webserver
+touch /webserver/docker-compose.yml
 cat << EOF > /webserver/docker-compose.yml
 version: "3"
 
